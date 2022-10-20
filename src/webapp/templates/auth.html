@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Вам на почту отправлен код. Введите его в поле</h1>
+	<form method="POST" action="/">
+		{{ form.csrf_token }}
+		<p>
+			{{ form.code.label}}
+			{{form.code(size=20)}}
+		</p>
+	</form>
+
+{% endblock %}

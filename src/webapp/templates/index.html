@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block id %} {{ id }} {% endblock %}
+
+{% block content %}
+
+    <form method="POST" action="/user/{{ id }}" style="border:0px">
+        <p>
+            <label for="user_name" style="font-size: 2.5rem ;">Введи свое ФИО</label>
+            <input type="text" name="user_name" id="nick" class="form-control w-100 h80" style="height: 80px;
+			font-size: 40px;">
+        </p>
+        <p>
+            <label for="guest_name" style="font-size: 2.5rem ;">Введи ФИО гостя</label>
+            <input type="text" name="guest_name" id="nick" class="form-control w-100 h80" style="height: 80px;
+			font-size: 40px;">
+        </p>
+        <p>
+            <label for="date" style="font-size: 2.5rem ;">Выбери дату посещения</label>
+            <input type="date" name="date" id="nick" class="form-control w-100 h80" style="height: 80px;
+			font-size: 40px;">
+        </p>
+        <p>
+            <input type="submit" value="Отправить" class="w-100 btn btn-primary btn-lg" style="height: 80px;
+			font-size: 40px;">
+        </p>
+    </form>
+{% endblock %}

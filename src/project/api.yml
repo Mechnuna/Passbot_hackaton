@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  description: "Описание REST запросов для работы с PassBOT"
+  title: PassBOT API
+  version: "1.0"
+
+paths:
+  /invites/?date=None&end_date=None:
+    get:
+      tags:
+        - Базовая выгрузка
+      description:
+        - Получение актуальных инвайтов
+      parameters:
+        - in: query
+          name: date
+          required: false
+          schema:
+            type: string
+            format: date
+          example: "2017-07-21"
+        - in: query
+          name: end_date
+          required: false
+          schema:
+            type: string
+            format: date
+          example: "2017-07-21"
+      responses:
+        "200":
+          description: Информация об инвайта.
+          content:
+            application/json:
+              schema:
+                $ref: ...
+        "400":
+          description: Невалидная схема документа или входные данные не верны.
+          content:
+            application/json:
+              schema:
+                $ref: ...
+              examples:
+                response:
+                  value: |-
+                    {
+                      "code": 400,
+                      "message": "Validation Failed"
+                    }
+        "404":
+          description: Данные не найдены
+          content:
+            application/json:
+              schema: 
+                $ref: ...
+              examples:
+                response:
+                  value: |-
+                    {
+                      "code": 404,
+                      "message": "Item not found"
+                    }   
+

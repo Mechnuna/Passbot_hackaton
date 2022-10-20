@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <body class="h-100 text-white bg-dark"> -->
+<div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+  
+
+  <main class="p-3 h-100 text-white bg-dark">
+    <h1>Заявка отправлена</h1>
+    <p class="lead">Дождитесь одобрения от АДМ <br> Статус можно смотреть в разделе 'Мои Заявки'</p>
+    <p class="lead">
+      <a href="/user/{{ id }}" class="btn btn-lg btn-secondary fw-bold border-white bg-white" style="
+    color: #333;
+">Назад</a>
+    </p>
+  </main>
+
+</div>
+<!-- </body> -->
+{% endblock %}

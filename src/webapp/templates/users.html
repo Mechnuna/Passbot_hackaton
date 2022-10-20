@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Пользователи {% endblock %}</h1>
+    <hr>
+    {% for user in user_list %}
+        <h4> {{ user['nick'] }}  }}</h4>
+    {% endfor %}
+{% endblock %}
